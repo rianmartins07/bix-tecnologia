@@ -1,0 +1,72 @@
+[
+    {
+        "model": "imovel.Imovel",
+        "pk": 1,
+        "fields": {
+            "codigo_imovel": "abc123xyz",
+            "limite_hospedes": 4,
+            "qtd_banheiro": 2,
+            "aceita_animais": true,
+            "valor_limpeza": 50.00,
+            "data_ativacao": "2024-03-05",
+            "criado_em": "2024-03-05T10:00:00Z",
+            "ultima_atualizacao": "2024-03-05T10:00:00Z"
+        }
+    },
+    {
+        "model": "imovel.Imovel",
+        "pk": 2,
+        "fields": {
+            "codigo_imovel": "def456uvw",
+            "limite_hospedes": 6,
+            "qtd_banheiro": 3,
+            "aceita_animais": false,
+            "valor_limpeza": 75.00,
+            "data_ativacao": "2024-03-10",
+            "criado_em": "2024-03-10T12:00:00Z",
+            "ultima_atualizacao": "2024-03-10T12:00:00Z"
+        }
+    },
+    {
+        "model": "imovel.Imovel",
+        "pk": 3,
+        "fields": {
+            "codigo_imovel": "ghi789rst",
+            "limite_hospedes": 8,
+            "qtd_banheiro": 4,
+            "aceita_animais": true,
+            "valor_limpeza": 100.00,
+            "data_ativacao": "2024-03-15",
+            "criado_em": "2024-03-15T15:00:00Z",
+            "ultima_atualizacao": "2024-03-15T15:00:00Z"
+        }
+    },
+    {
+        "model": "imovel.Imovel",
+        "pk": 4,
+        "fields": {
+            "codigo_imovel": "jkl012mno",
+            "limite_hospedes": 5,
+            "qtd_banheiro": 2,
+            "aceita_animais": false,
+            "valor_limpeza": 60.00,
+            "data_ativacao": "2024-03-20",
+            "criado_em": "2024-03-20T18:00:00Z",
+            "ultima_atualizacao": "2024-03-20T18:00:00Z"
+        }
+    },
+    {
+        "model": "imovel.Imovel",
+        "pk": 5,
+        "fields": {
+            "codigo_imovel": "pqr345abc",
+            "limite_hospedes": 3,
+            "qtd_banheiro": 1,
+            "aceita_animais": true,
+            "valor_limpeza": 40.00,
+            "data_ativacao": "2024-03-25",
+            "criado_em": "2024-03-25T21:00:00Z",
+            "ultima_atualizacao": "2024-03-25T21:00:00Z"
+        }
+    }
+]

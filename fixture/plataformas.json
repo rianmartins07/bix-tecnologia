@@ -1,0 +1,26 @@
+[
+    {
+        "model": "anuncio.Plataforma",
+        "pk": 1,
+        "fields": {
+            "nome_plataforma": "Plataforma A",
+            "taxa_plataforma": 5.0
+        }
+    },
+    {
+        "model": "anuncio.Plataforma",
+        "pk": 2,
+        "fields": {
+            "nome_plataforma": "Plataforma B",
+            "taxa_plataforma": 7.5
+        }
+    },
+    {
+        "model": "anuncio.Plataforma",
+        "pk": 3,
+        "fields": {
+            "nome_plataforma": "Plataforma C",
+            "taxa_plataforma": 6.0
+        }
+    }
+]

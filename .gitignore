@@ -1,0 +1,14 @@
+.idea
+.vscode
+venv
+.venv
+media
+*.pyc
+.env
+*.db
+db.sqlite3
+postgres-ca-certificate.crt
+tst
+tmp
+data
+logstash.db

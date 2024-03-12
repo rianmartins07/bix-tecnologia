@@ -1,0 +1,52 @@
+[
+    {
+        "model": "anuncio.Anuncio",
+        "pk": 1,
+        "fields": {
+            "imovel": 1,
+            "plataforma": 1,
+            "criado_em": "2024-03-05T10:00:00Z",
+            "ultima_atualizacao": "2024-03-05T10:00:00Z"
+        }
+    },
+    {
+        "model": "anuncio.Anuncio",
+        "pk": 2,
+        "fields": {
+            "imovel": 2,
+            "plataforma": 2,
+            "criado_em": "2024-03-10T12:00:00Z",
+            "ultima_atualizacao": "2024-03-10T12:00:00Z"
+        }
+    },
+    {
+        "model": "anuncio.Anuncio",
+        "pk": 3,
+        "fields": {
+            "imovel": 3,
+            "plataforma": 3,
+            "criado_em": "2024-03-15T15:00:00Z",
+            "ultima_atualizacao": "2024-03-15T15:00:00Z"
+        }
+    },
+    {
+        "model": "anuncio.Anuncio",
+        "pk": 4,
+        "fields": {
+            "imovel": 4,
+            "plataforma": 1,
+            "criado_em": "2024-03-20T18:00:00Z",
+            "ultima_atualizacao": "2024-03-20T18:00:00Z"
+        }
+    },
+    {
+        "model": "anuncio.Anuncio",
+        "pk": 5,
+        "fields": {
+            "imovel": 5,
+            "plataforma": 2,
+            "criado_em": "2024-03-25T21:00:00Z",
+            "ultima_atualizacao": "2024-03-25T21:00:00Z"
+        }
+    }
+]

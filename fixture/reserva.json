@@ -1,0 +1,122 @@
+[
+    {
+        "model": "reserva.Reserva",
+        "pk": 1,
+        "fields": {
+            "codigo_reserva": "abc123xyz",
+            "check_in": "2024-03-05",
+            "check_out": "2024-03-10",
+            "valor": 200.00,
+            "comentario": "Reserva para férias",
+            "qtd_hospedes": 4,
+            "criado_em": "2024-03-05T10:00:00Z",
+            "ultima_atualizacao": "2024-03-05T10:00:00Z",
+            "anuncio": 1
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 2,
+        "fields": {
+            "codigo_reserva": "def456uvw",
+            "check_in": "2024-03-15",
+            "check_out": "2024-03-20",
+            "valor": 150.00,
+            "comentario": "Reserva de última hora",
+            "qtd_hospedes": 3,
+            "criado_em": "2024-03-10T12:00:00Z",
+            "ultima_atualizacao": "2024-03-10T12:00:00Z",
+            "anuncio": 2
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 3,
+        "fields": {
+            "codigo_reserva": "ghi789rst",
+            "check_in": "2024-03-25",
+            "check_out": "2024-03-30",
+            "valor": 300.00,
+            "comentario": "Reserva para evento",
+            "qtd_hospedes": 5,
+            "criado_em": "2024-03-15T15:00:00Z",
+            "ultima_atualizacao": "2024-03-15T15:00:00Z",
+            "anuncio": 3
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 4,
+        "fields": {
+            "codigo_reserva": "jkl012mno",
+            "check_in": "2024-04-05",
+            "check_out": "2024-04-10",
+            "valor": 180.00,
+            "comentario": "Reserva para família",
+            "qtd_hospedes": 4,
+            "criado_em": "2024-03-20T18:00:00Z",
+            "ultima_atualizacao": "2024-03-20T18:00:00Z",
+            "anuncio": 4
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 5,
+        "fields": {
+            "codigo_reserva": "pqr345abc",
+            "check_in": "2024-04-15",
+            "check_out": "2024-04-20",
+            "valor": 250.00,
+            "comentario": "Reserva para feriado",
+            "qtd_hospedes": 6,
+            "criado_em": "2024-03-25T21:00:00Z",
+            "ultima_atualizacao": "2024-03-25T21:00:00Z",
+            "anuncio": 5
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 6,
+        "fields": {
+            "codigo_reserva": "stu678vwx",
+            "check_in": "2024-05-01",
+            "check_out": "2024-05-06",
+            "valor": 220.00,
+            "comentario": "Reserva para casal",
+            "qtd_hospedes": 2,
+            "criado_em": "2024-04-01T10:00:00Z",
+            "ultima_atualizacao": "2024-04-01T10:00:00Z",
+            "anuncio": 1
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 7,
+        "fields": {
+            "codigo_reserva": "yza901bcd",
+            "check_in": "2024-05-10",
+            "check_out": "2024-05-15",
+            "valor": 280.00,
+            "comentario": "Reserva para aniversário",
+            "qtd_hospedes": 8,
+            "criado_em": "2024-04-10T12:00:00Z",
+            "ultima_atualizacao": "2024-04-10T12:00:00Z",
+            "anuncio": 2
+        }
+    },
+    {
+        "model": "reserva.Reserva",
+        "pk": 8,
+        "fields": {
+            "codigo_reserva": "bcd234efg",
+            "check_in": "2024-05-20",
+            "check_out": "2024-05-25",
+            "valor": 190.00,
+            "comentario": "Reserva para reunião",
+            "qtd_hospedes": 3,
+            "criado_em": "2024-04-20T18:00:00Z",
+            "ultima_atualizacao": "2024-04-20T18:00:00Z",
+            "anuncio": 3
+        }
+    }
+]
