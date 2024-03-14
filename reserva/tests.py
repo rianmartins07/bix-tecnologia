@@ -23,6 +23,7 @@ class ReservaAPITestCase(TestCase):
     def test_reserva_listagem(self):
         url = reverse('reserva-listagem')
         response = self.client.get(url)
+        print(response.content)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_reserva_criacao(self):

@@ -11,7 +11,7 @@ class ReservaSerializer(serializers.ModelSerializer):
         checkin = data.get('check_in')
         checkout = data.get('check_out')
 
-        if checkin and checkout and checkin >= checkout:
+        if checkin and checkout and checkin > checkout:
             raise serializers.ValidationError("A data de check-in deve ser anterior à data de check-out.")
 
         return data

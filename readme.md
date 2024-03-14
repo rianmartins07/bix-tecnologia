@@ -49,3 +49,7 @@ Neste endereço, você terá acesso a todas as interfaces de consumo, criação,
     python manage.py test
 
 **É de suma importância rodar esse comando de teste toda a vez que for realizado alguma feature/fix no projeto.**
+
+
+
+celery -A bix beat -l info --scheduler django_celery_beat.schedulers:DatabaseScheduler

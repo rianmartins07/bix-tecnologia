@@ -9,11 +9,11 @@
 
     <h2>Login Form</h2>
 
-    <form action="{% url 'login_view' %}" method="post">
+    <form action="{% url 'token_obtain_pair' %}" method="post">
         {% csrf_token %}
 
-        <label for="email">email:</label>
-        <input type="text" id="email" name="email" required>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
 
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>

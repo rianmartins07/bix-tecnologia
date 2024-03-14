@@ -1,0 +1,16 @@
+Django==5.0.3
+django-simple-history==3.5.0
+djangorestframework==3.14.0
+django-rest-swagger==2.2.0
+python-decouple==3.8
+psycopg2==2.9.9
+shortuuid==1.0.12
+drf-yasg==1.21.7
+djangorestframework-simplejwt==5.3.1
+celery==5.3.6
+redis==5.0.3
+SQLAlchemy==2.0.28
+django_celery_results==2.5.1
+django-celery-beat==2.6.0
+django_redis==5.4.0
+django_cors_headers==4.3.1

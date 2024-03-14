@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 from decouple import config
 from pathlib import Path
-
+from datetime import timedelta
+from django.urls import reverse_lazy
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,34 +39,52 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'simple_history',
-    'rest_framework_simplejwt',
     'rest_framework',
+    'rest_framework_simplejwt',
     'drf_yasg',
+    'celery',
+    'django_celery_beat',
+    'django_celery_results',
     'rest_framework_swagger',
     'anuncio',
     'imovel',
     'reserva',
-    'account'
+    'account',
+    "corsheaders",
     
 ]
-
+SWAGGER_SETTINGS = {
+    'SHOW_REQUEST_HEADERS': True,
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+    'USE_SESSION_AUTH': True,
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
 ]
-
+import os
 ROOT_URLCONF = 'bix.urls'
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'template')
+
+ALLOWED_HOSTS = ['*']
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,11 +98,26 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bix.wsgi.application'
+CELERY_BROKER_URL = config('CELERY_BROKER_URL', cast=str)
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = f'django-db'
+CELERY_TRACK_STARTED = True
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": config('CELERY_BROKER_URL', cast=str),
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        },
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
 DATABASES = {
    'default': {
        'ENGINE': 'django.db.backends.postgresql',
@@ -114,16 +148,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
-
-SIMPLE_JWT = {
-  "TOKEN_OBTAIN_SERIALIZER": "account.authentication.serializers.MyTokenObtainPairSerializer",
-
-}
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -146,3 +170,26 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'account.authenticate.CustomAuthentication',
+    ),
+}
+
+SIMPLE_JWT = {
+'AUTH_COOKIE': 'bearer', 
+'AUTH_COOKIE_DOMAIN': None,    
+'AUTH_COOKIE_SECURE': False,   
+'AUTH_COOKIE_HTTP_ONLY' : True,
+'AUTH_COOKIE_PATH': '/',       
+'AUTH_COOKIE_SAMESITE': 'Lax', 
+'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+}
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = config('EMAIL_HOST' ,cast=str)
+EMAIL_PORT = config('EMAIL_PORT', cast=str)
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER', cast=str)
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', cast=str)
